@@ -41,7 +41,7 @@ export default class DashBoard extends React.Component {
                     </Container>
                     <Container maxWidth="xl">
                         <Box sx={{ height: '50vh', backgroundColor: '#ebdaeb' }} >
-                            <Carousel style={{ width: '15em' }} interval={2000} touch={true}>
+                            <Carousel style={{ marginLeft:'15%', width: '17em' }} interval={3000} touch={true}>
                                 <Carousel.Item>
                                     <img
                                         className="d-block w-100"
@@ -85,7 +85,7 @@ export default class DashBoard extends React.Component {
                         <Box sx={{ flexGrow: 1, height: '34vh', backgroundColor: '#ebdaeb' }}>
                             <Grid container spacing={2}>
                                 <Grid item xs={4}>
-                                    <Item style={{ backgroundColor: '#990b84' }}>Google maps</Item>
+                                    <Item style={{ backgroundColor: '#990b84' }} onClick={()=>window.open("https://goo.gl/maps/ToHfKhdyqCto9UxYA", "_blank")} >Google maps</Item>
                                 </Grid>
                                 <Grid item xs={4}>
                                     <Item style={{ backgroundColor: '#990b84' }}>Contacts</Item>
