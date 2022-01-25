@@ -18,7 +18,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ContactsIcon from '@mui/icons-material/Contacts';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
-
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 export default class DashBoard extends React.Component {
 
     constructor(props) {
@@ -42,7 +42,7 @@ export default class DashBoard extends React.Component {
                     <CssBaseline />
                     <Container maxWidth="xl">
                         <Box sx={{ height: '16vh', backgroundColor: '#ebdaeb' }}>
-                            <h1>Prash - Anu</h1>
+                            <h1><b>Prash <FavoriteBorderIcon></FavoriteBorderIcon> Anu</b></h1>
                         </Box>
                     </Container>
                     <Container maxWidth="xl">
@@ -135,17 +135,17 @@ export default class DashBoard extends React.Component {
                             <tbody>
                                 <tr>
                                     <td>Vinay AG</td>
-                                    <td>9538805660</td>
+                                    <td>0002222515</td>
                                 </tr>
                                 <tr>
 
                                     <td>Prashanth</td>
-                                    <td>9538161161</td>
+                                    <td>6656+44+44</td>
                                 </tr>
                                 <tr>
 
                                     <td>Gangadhar</td>
-                                    <td>8762755322</td>
+                                    <td>6545464654</td>
                                 </tr>
                                 <tr>
 
