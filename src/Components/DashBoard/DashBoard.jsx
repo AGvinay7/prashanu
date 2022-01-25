@@ -41,7 +41,7 @@ export default class DashBoard extends React.Component {
                     </Container>
                     <Container maxWidth="xl">
                         <Box sx={{ height: '50vh', backgroundColor: '#ebdaeb' }} >
-                            <Carousel style={{ width: '30em', height: '5em', marginLeft: '28%' }} interval={2000} touch={true}>
+                            <Carousel style={{ width: '15em' }} interval={2000} touch={true}>
                                 <Carousel.Item>
                                     <img
                                         className="d-block w-100"
