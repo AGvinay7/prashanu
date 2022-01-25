@@ -14,6 +14,10 @@ import three from '../../Images/three.jpg';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import ContactsIcon from '@mui/icons-material/Contacts';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 
 export default class DashBoard extends React.Component {
 
@@ -87,23 +91,23 @@ export default class DashBoard extends React.Component {
                         <Box sx={{ flexGrow: 1, height: '34vh', backgroundColor: '#ebdaeb' }}>
                             <Grid container spacing={2}>
                                 <Grid item xs={4}>
-                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => window.open("https://goo.gl/maps/ToHfKhdyqCto9UxYA", "_blank")} >Google maps</Item>
+                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => window.open("https://goo.gl/maps/ToHfKhdyqCto9UxYA", "_blank")} >Location <LocationOnIcon></LocationOnIcon></Item>
                                 </Grid>
                                 <Grid item xs={4}>
-                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ openContactsModal: true })} >Contacts</Item>
+                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ openContactsModal: true })} >Contacts <ContactsIcon></ContactsIcon></Item>
                                 </Grid>
                                 <Grid item xs={4}>
-                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ showCalendar: true })}>Calendar</Item>
+                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ showCalendar: true })}>Calendar <CalendarTodayIcon></CalendarTodayIcon></Item>
                                 </Grid>
                                 <Grid item xs={4}>
-                                    <Item style={{ backgroundColor: '#990b84' }}>Short video</Item>
+                                    <Item style={{ backgroundColor: '#990b84' }}>Short video <SubscriptionsIcon></SubscriptionsIcon></Item>
                                 </Grid>
-                                <Grid item xs={4}>
+                                {/* <Grid item xs={4}>
                                     <Item style={{ backgroundColor: '#990b84' }}>Instagram</Item>
                                 </Grid>
                                 <Grid item xs={4}>
                                     <Item style={{ backgroundColor: '#990b84' }}>Gllary</Item>
-                                </Grid>
+                                </Grid> */}
                             </Grid>
                         </Box>
                     </Container>
