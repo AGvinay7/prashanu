@@ -90,24 +90,18 @@ export default class DashBoard extends React.Component {
                     <Container maxWidth="xl">
                         <Box sx={{ flexGrow: 1, height: '34vh', backgroundColor: '#ebdaeb' }}>
                             <Grid container spacing={2}>
-                                <Grid item xs={4}>
+                                <Grid item xs={6}>
                                     <Item style={{ backgroundColor: '#990b84' }} onClick={() => window.open("https://goo.gl/maps/ToHfKhdyqCto9UxYA", "_blank")} >Location <LocationOnIcon></LocationOnIcon></Item>
                                 </Grid>
-                                <Grid item xs={4}>
+                                <Grid item xs={6}>
                                     <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ openContactsModal: true })} >Contacts <ContactsIcon></ContactsIcon></Item>
                                 </Grid>
-                                <Grid item xs={4}>
+                                <Grid item xs={6}>
                                     <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ showCalendar: true })}>Calendar <CalendarTodayIcon></CalendarTodayIcon></Item>
                                 </Grid>
-                                <Grid item xs={4}>
+                                <Grid item xs={6}>
                                     <Item style={{ backgroundColor: '#990b84' }}>Short video <SubscriptionsIcon></SubscriptionsIcon></Item>
-                                </Grid>
-                                {/* <Grid item xs={4}>
-                                    <Item style={{ backgroundColor: '#990b84' }}>Instagram</Item>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <Item style={{ backgroundColor: '#990b84' }}>Gllary</Item>
-                                </Grid> */}
+                                </Grid>                               
                             </Grid>
                         </Box>
                     </Container>
