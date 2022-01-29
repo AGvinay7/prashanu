@@ -19,6 +19,8 @@ import ContactsIcon from '@mui/icons-material/Contacts';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import ReactPlayer from 'react-player';
+
 export default class DashBoard extends React.Component {
 
     constructor(props) {
@@ -100,17 +102,35 @@ export default class DashBoard extends React.Component {
                                     <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ showCalendar: true })}>Calendar <CalendarTodayIcon></CalendarTodayIcon></Item>
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <Item style={{ backgroundColor: '#990b84' }}>Short video <SubscriptionsIcon></SubscriptionsIcon></Item>
-                                </Grid>                               
+                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ playerOn: true })} >Short video <SubscriptionsIcon></SubscriptionsIcon></Item>
+                                </Grid>
                             </Grid>
                         </Box>
                     </Container>
                 </React.Fragment>
                 {this.state.openContactsModal && this.showContactsModal()}
                 {this.state.showCalendar && this.showCalendar()}
+                {this.state.playerOn && this.playPlayer()}
+
 
             </div>
         );
+    }
+
+
+
+    playPlayer = () => {
+        return (
+            <ReactPlayer
+                className='react-player fixed-bottom'
+                // url='https://drive.google.com/file/d/1hwpZRvcvpJ662zGvATZ2tOjEQsFTdLnD/view?usp=sharing'
+                url = 'https://youtu.be/eXFCZw2U0gc'
+                width='100%'
+                height='100%'
+                controls={true}
+
+            />
+        )
     }
 
     showContactsModal = () => {
