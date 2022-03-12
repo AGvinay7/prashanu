@@ -20,6 +20,21 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ReactPlayer from 'react-player';
+import Accordion from 'react-bootstrap/Accordion';
+import ListGroup from 'react-bootstrap/ListGroup';
+// import AHR from '../../Images/AHR.JPG';
+// import ARG from '../../Images/ARG.jpg';
+// import AGC from '../../Images/AGC.jpg';
+// import ARS1 from '../../Images/ARS1.jpg';
+// import ARH from '../../Images/ARH.jpg';
+// import ARS from '../../Images/ARS.jpg';
+// import L from '../../Images/L.JPG';
+// import ARR from '../../Images/ARR.jpg';
+import bg1 from '../../Images/bg1.jpg';
+import PA from '../../Images/PA.png';
+// import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export default class DashBoard extends React.Component {
 
@@ -27,9 +42,6 @@ export default class DashBoard extends React.Component {
         super(props);
         this.state = DashBoardState
     }
-
-
-
     render() {
         const Item = styled(Paper)(({ theme }) => ({
             ...theme.typography.body2,
@@ -39,16 +51,18 @@ export default class DashBoard extends React.Component {
             fontSize: '1em'
         }));
         return (
-            <div>
+            <div style={{ backgroundImage: `url(${bg1})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
                 <React.Fragment>
                     <CssBaseline />
-                    <Container maxWidth="xl">
-                        <Box sx={{ height: '16vh', backgroundColor: '#ebdaeb' }}>
-                            <h1><b>Prash <FavoriteBorderIcon></FavoriteBorderIcon> Anu</b></h1>
+                    <Container style={{ padding: "0px" }} maxWidth="xl">
+                        {/* <Box sx={{ height: '16vh' }}> */}
+                        <Box style={{ paddingBottom: '2em' }}>
+                            <h1><b>Prashanth<FavoriteBorderIcon></FavoriteBorderIcon>Anitha</b></h1>
+                            <img src={PA} height={'20%'} width={'20%'}></img>
                         </Box>
                     </Container>
-                    <Container maxWidth="xl">
-                        <Box sx={{ height: '50vh', backgroundColor: '#ebdaeb' }} >
+                    <Container style={{ padding: "0px" }} maxWidth="xl">
+                        <Box sx={{ height: '50vh' }} >
                             <Carousel style={{ marginLeft: '15%', width: '17em' }} interval={3000} touch={true}>
                                 <Carousel.Item>
                                     <img
@@ -80,20 +94,22 @@ export default class DashBoard extends React.Component {
                                         src={three}
                                         alt="Third slide"
                                     />
-
                                     <Carousel.Caption>
-                                        <h3>Label for 3rd slide</h3>
+                                        <h3>It's wedding time!</h3>
                                         <p>We want to share this new chapter of our life with you and your family.</p>
                                     </Carousel.Caption>
                                 </Carousel.Item>
                             </Carousel>
                         </Box>
                     </Container>
+                    <br />
+                    <br />
                     <Container maxWidth="xl">
-                        <Box sx={{ flexGrow: 1, height: '34vh', backgroundColor: '#ebdaeb' }}>
+                        {/* <Box sx={{ flexGrow: 1, height: '34vh', backgroundColor: '#ebdaeb' }}> */}
+                        <Box sx={{ flexGrow: 1, height: '34vh' }}>
                             <Grid container spacing={2}>
                                 <Grid item xs={6}>
-                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => window.open("https://goo.gl/maps/ToHfKhdyqCto9UxYA", "_blank")} >Location <LocationOnIcon></LocationOnIcon></Item>
+                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => window.open("https://goo.gl/maps/56QH4Visv14T98QK7", "_blank")} >Location <LocationOnIcon></LocationOnIcon></Item>
                                 </Grid>
                                 <Grid item xs={6}>
                                     <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ openContactsModal: true })} >Contacts <ContactsIcon></ContactsIcon></Item>
@@ -102,8 +118,108 @@ export default class DashBoard extends React.Component {
                                     <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ showCalendar: true })}>Calendar <CalendarTodayIcon></CalendarTodayIcon></Item>
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ playerOn: true })} >Short video <SubscriptionsIcon></SubscriptionsIcon></Item>
+                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ playerOn: true })} ><b>Short video</b> <SubscriptionsIcon></SubscriptionsIcon></Item>
                                 </Grid>
+                            </Grid>
+                            <Grid style={{ marginTop: '1.7em' }}>
+                                <h3 style={{ color: '#d3d4cd' }}>With best compliments from our family members</h3>
+                                <h5 style={{ color: '#d3d4cd' }}>Aralimarada family Hithla and Kaluti family Jhamakhandi</h5>
+
+                                {/* <h4>With best compliments from our family members, friends and well wishers</h4> */}
+                                <div>
+                                    {/* <Accordion>
+                                            <Accordion.Item eventKey="0">
+                                                <Accordion.Header style={{ textAlign: 'center' }}>With best compliments from our family members</Accordion.Header>
+                                                <Accordion.Body>
+                                                    Aralimarada family Hithla and Kaluti family Jhamakhandi.
+                                                </Accordion.Body> */}
+                                    {/* <Accordion.Body>
+                                                <ListGroup variant='flush'>
+                                                    <ListGroup.Item>
+                                                        <Container>
+                                                            <Row style={{ marginLeft: '15%' }} xs={2} md={4} lg={6}>
+                                                                <img src={AHR}></img>
+                                                            </Row>
+                                                            <Row style={{ marginLeft: '18.5%' }}>
+                                                                Ramappa
+                                                            </Row>
+                                                        </Container>
+                                                    </ListGroup.Item>
+                                                    <ListGroup.Item>
+                                                        <Container>
+                                                            <Row style={{ marginLeft: '15%' }} xs={2} md={4} lg={6}>
+                                                                <img src={L}></img>
+                                                            </Row>
+                                                            <Row style={{ marginLeft: '18.5%' }}>
+                                                                Lalithamma
+                                                            </Row>
+                                                        </Container>
+                                                    </ListGroup.Item>
+                                                    <ListGroup.Item>
+                                                        <Container>
+                                                            <Row style={{ marginLeft: '15%' }} xs={2} md={4} lg={6}>
+                                                                <img src={ARG}></img>
+                                                            </Row>
+                                                            <Row style={{ marginLeft: '18.5%' }}>
+                                                                Gangadhar
+                                                            </Row>
+                                                        </Container>
+                                                    </ListGroup.Item>
+                                                    <ListGroup.Item>
+                                                        <Container>
+                                                            <Row style={{ marginLeft: '15%' }} xs={2} md={4} lg={6}>
+                                                                <img src={AGC}></img>
+                                                            </Row>
+                                                            <Row style={{ marginLeft: '18.5%' }}>
+                                                                Chandrakala
+                                                            </Row>
+                                                        </Container>
+                                                    </ListGroup.Item>
+                                                    <ListGroup.Item>
+                                                        <Container>
+                                                            <Row style={{ marginLeft: '15%' }} xs={2} md={4} lg={6}>
+                                                                <img src={ARR}></img>
+                                                            </Row>
+                                                            <Row style={{ marginLeft: '18.5%' }}>
+                                                                Ravikumar AR
+                                                            </Row>
+                                                        </Container>
+                                                    </ListGroup.Item>
+                                                    <ListGroup.Item>
+                                                        <Container>
+                                                            <Row style={{ marginLeft: '15%' }} xs={2} md={4} lg={6}>
+                                                                <img src={ARS1}></img>
+                                                            </Row>
+                                                            <Row style={{ marginLeft: '18.5%' }}>
+                                                                Shivkumar AR
+                                                            </Row>
+                                                        </Container>
+                                                    </ListGroup.Item>
+                                                    <ListGroup.Item>
+                                                        <Container>
+                                                            <Row style={{ marginLeft: '15%' }} xs={2} md={4} lg={6}>
+                                                                <img src={ARH}></img>
+                                                            </Row>
+                                                            <Row style={{ marginLeft: '18.5%' }}>
+                                                                Halesh AR
+                                                            </Row>
+                                                        </Container>
+                                                    </ListGroup.Item>
+                                                    <ListGroup.Item>
+                                                        <Container>
+                                                            <Row style={{ marginLeft: '15%' }} xs={2} md={4} lg={6}>
+                                                                <img src={ARS}></img>
+                                                            </Row>
+                                                            <Row style={{ marginLeft: '18.5%' }}>
+                                                                Satish AR
+                                                            </Row>
+                                                        </Container>
+                                                    </ListGroup.Item>
+                                                </ListGroup>
+                                            </Accordion.Body> */}
+                                    {/* </Accordion.Item>
+                                        </Accordion> */}
+                                </div>
                             </Grid>
                         </Box>
                     </Container>
@@ -111,8 +227,6 @@ export default class DashBoard extends React.Component {
                 {this.state.openContactsModal && this.showContactsModal()}
                 {this.state.showCalendar && this.showCalendar()}
                 {this.state.playerOn && this.playPlayer()}
-
-
             </div>
         );
     }
@@ -124,7 +238,7 @@ export default class DashBoard extends React.Component {
             <ReactPlayer
                 className='react-player fixed-bottom'
                 // url='https://drive.google.com/file/d/1hwpZRvcvpJ662zGvATZ2tOjEQsFTdLnD/view?usp=sharing'
-                url = 'https://youtu.be/eXFCZw2U0gc'
+                url='https://youtu.be/eXFCZw2U0gc'
                 width='100%'
                 height='100%'
                 controls={true}
@@ -154,28 +268,41 @@ export default class DashBoard extends React.Component {
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td><b>- Hithla -</b></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Ravikumar AR</td>
+                                    <td>9483305801</td>
+                                </tr>
+                                <tr>
+                                    <td>Gangadhar AR</td>
+                                    <td>8762755322</td>
+                                </tr>
+                                <tr>
                                     <td>Vinay AG</td>
-                                    <td>0002222515</td>
+                                    <td>9538805660</td>
                                 </tr>
                                 <tr>
+                                    <td>Prashanth AG</td>
+                                    <td>9538161161</td>
+                                </tr>
 
-                                    <td>Prashanth</td>
-                                    <td>6656+44+44</td>
+                                <tr>
+                                    <td><b>- Jamakhandi -</b></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
-
-                                    <td>Gangadhar</td>
-                                    <td>6545464654</td>
-                                </tr>
-                                <tr>
-
                                     <td>Deepak Kaluti</td>
-                                    <td>9998887776</td>
+                                    <td>9738303910</td>
                                 </tr>
                                 <tr>
-
                                     <td>Manu Kaluti</td>
-                                    <td>0022255555</td>
+                                    <td>9535153239</td>
+                                </tr>
+                                <tr>
+                                    <td>Naveen Kaluti</td>
+                                    <td>9972805816</td>
                                 </tr>
 
                             </tbody>
@@ -228,13 +355,15 @@ export default class DashBoard extends React.Component {
                                     <td>Event 5</td>
                                 </tr>
                                 <tr>
-                                    <td>06-05-2022</td>
-                                    <td>Evening 4 PM</td>
-                                    <td>Event 6</td>
+                                    <td>8th May</td>
+                                    <td>Noon</td>
+                                    <td>Receiption at Hithala</td>
                                 </tr>
 
                             </tbody>
                         </Table>
+
+                        <Button onClick={() => window.open("https://goo.gl/maps/6nzvUA3VZXrR62wCA", "_blank")}>Click here to get Hithala location</Button>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={() => this.setState({ showCalendar: false })}>
