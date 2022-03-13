@@ -22,6 +22,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ReactPlayer from 'react-player';
 import Accordion from 'react-bootstrap/Accordion';
 import ListGroup from 'react-bootstrap/ListGroup';
+import './Dashboard.css';
 // import AHR from '../../Images/AHR.JPG';
 // import ARG from '../../Images/ARG.jpg';
 // import AGC from '../../Images/AGC.jpg';
@@ -109,16 +110,16 @@ export default class DashBoard extends React.Component {
                         <Box sx={{ flexGrow: 1, height: '34vh' }}>
                             <Grid container spacing={2}>
                                 <Grid item xs={6}>
-                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => window.open("https://goo.gl/maps/56QH4Visv14T98QK7", "_blank")} >Location <LocationOnIcon></LocationOnIcon></Item>
+                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => window.open("https://goo.gl/maps/56QH4Visv14T98QK7", "_blank")} ><b>Location </b><LocationOnIcon></LocationOnIcon></Item>
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ openContactsModal: true })} >Contacts <ContactsIcon></ContactsIcon></Item>
+                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ openContactsModal: true })} ><b>Contacts </b><ContactsIcon></ContactsIcon></Item>
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ showCalendar: true })}>Calendar <CalendarTodayIcon></CalendarTodayIcon></Item>
+                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ showCalendar: true })}><b>Calendar </b><CalendarTodayIcon></CalendarTodayIcon></Item>
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ playerOn: true })} ><b>Short video</b> <SubscriptionsIcon></SubscriptionsIcon></Item>
+                                    <Item style={{ backgroundColor: '#990b84' }} onClick={() => this.setState({ playerOn: true })} ><b>Play video</b> <SubscriptionsIcon></SubscriptionsIcon></Item>
                                 </Grid>
                             </Grid>
                             <Grid style={{ marginTop: '1.7em' }}>
@@ -235,15 +236,35 @@ export default class DashBoard extends React.Component {
 
     playPlayer = () => {
         return (
-            <ReactPlayer
-                className='react-player fixed-bottom'
-                // url='https://drive.google.com/file/d/1hwpZRvcvpJ662zGvATZ2tOjEQsFTdLnD/view?usp=sharing'
-                url='https://youtu.be/eXFCZw2U0gc'
-                width='100%'
-                height='100%'
-                controls={true}
+            <>
+                <Modal
+                    size='xl'
+                    show={this.state.playerOn}
+                    onHide={() => this.setState({ playerOn: false })}
 
-            />
+                >
+        
+                    <Modal.Body>
+                        <ReactPlayer
+                            width='20rem'
+                            // url='https://drive.google.com/file/d/1hwpZRvcvpJ662zGvATZ2tOjEQsFTdLnD/view?usp=sharing'
+                            url='https://youtu.be/eXFCZw2U0gc'
+                            controls={true}
+                            onEnded={() => this.setState({ playerOn: false })}
+                            onHide={() => this.setState({ playerOn: false })}
+                            playsinline={true}
+                            playing={this.state.playerOn} />
+                        {/* <div><Button onClick={() => this.setState({ playerOn: false })}>Close player</Button></div> */}
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={() => this.setState({ playerOn: false })}>
+                            Close
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+
+            </>
+
         )
     }
 
