@@ -36,6 +36,9 @@ import PA from '../../Images/PA.png';
 // import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { BsInstagram } from "react-icons/bs";
+import { BsFacebook } from "react-icons/bs";
+import { BsSnapchat } from "react-icons/bs";
 
 export default class DashBoard extends React.Component {
 
@@ -107,7 +110,7 @@ export default class DashBoard extends React.Component {
                     <br />
                     <Container maxWidth="xl">
                         {/* <Box sx={{ flexGrow: 1, height: '34vh', backgroundColor: '#ebdaeb' }}> */}
-                        <Box sx={{ flexGrow: 1, height: '34vh' }}>
+                        <Box sx={{ flexGrow: 1, height: '42vh' }}>
                             <Grid container spacing={2}>
                                 <Grid item xs={6}>
                                     <Item style={{ backgroundColor: '#990b84' }} onClick={() => window.open("https://goo.gl/maps/56QH4Visv14T98QK7", "_blank")} ><b>Location </b><LocationOnIcon></LocationOnIcon></Item>
@@ -124,7 +127,13 @@ export default class DashBoard extends React.Component {
                             </Grid>
                             <Grid style={{ marginTop: '1.7em' }}>
                                 <h3 style={{ color: '#d3d4cd' }}>With best compliments from our family members</h3>
-                                <h5 style={{ color: '#d3d4cd' }}>Aralimarada family Hithla and Kaluti family Jhamakhandi</h5>
+                                <p style={{ color: '#d3d4cd' }}>Aralimarada family Hithla and Kaluti family Jamakhandi</p>
+                                <span style={{ fontSize: '8px' }}>Made with love by vinay</span>
+                                <div style={{ display: 'flex', textAlign: 'center', marginLeft: '46%' }}>
+                                    <div style={{ padding: '0.5em' }}><BsInstagram onClick={() => window.open('https://instagram.com/agvinn?utm_medium=copy_link', '_blank').focus()}></BsInstagram></div>
+                                    <div style={{ padding: '0.5em' }}><BsFacebook onClick={() => window.open('https://www.facebook.com/profile.php?id=100076736859297', '_blank').focus()}></BsFacebook></div>
+                                    <div style={{ padding: '0.5em' }}><BsSnapchat onClick={() => window.open('https://www.snapchat.com/add/agvinnn?share_id=ODYyNkYw&locale=en_IN', '_blank').focus()}></BsSnapchat></div>
+                                </div>
 
                                 {/* <h4>With best compliments from our family members, friends and well wishers</h4> */}
                                 <div>
@@ -243,10 +252,10 @@ export default class DashBoard extends React.Component {
                     onHide={() => this.setState({ playerOn: false })}
 
                 >
-        
+
                     <Modal.Body>
                         <ReactPlayer
-                            width='20rem'
+                            width='21rem'
                             // url='https://drive.google.com/file/d/1hwpZRvcvpJ662zGvATZ2tOjEQsFTdLnD/view?usp=sharing'
                             url='https://youtu.be/eXFCZw2U0gc'
                             controls={true}
